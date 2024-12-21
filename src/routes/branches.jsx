@@ -123,23 +123,11 @@ export default function Branches() {
           <TabPanel value={value} index={0}>
             <Stack spacing={2}>
               <Stack spacing={1}>
-                <Typography
-                  variant="body1"
-                  sx={{
-                    fontSize: "1.1rem",
-                  }}
-                >
-                  الإدارة العامة
-                </Typography>
+                <Typography variant="h5">الإدارة العامة</Typography>
                 <Typography component="span" variant="caption">
                   سوريا,اللاذقية,شارع الجزائر
                 </Typography>
-                <Typography
-                  variant="body1"
-                  sx={{
-                    fontSize: "1.1rem",
-                  }}
-                >
+                <Typography variant="h6">
                   المدير العام للشركة : الاستاذ عادل غزال
                 </Typography>
               </Stack>
@@ -288,7 +276,7 @@ export default function Branches() {
             <Stack rowGap={2}>
               <Stack spacing={2}>
                 <Stack spacing={1}>
-                  <Typography variant="h4">فرع اللاذقية</Typography>
+                  <Typography variant="h5">فرع اللاذقية</Typography>
                   <Typography variant="caption">
                     سوريا,اللاذقية,شارع الجزائر
                   </Typography>
@@ -752,7 +740,7 @@ export default function Branches() {
             <Stack rowGap={2}>
               <Stack spacing={2}>
                 <Stack spacing={1}>
-                  <Typography variant="h4">فرع طرطوس</Typography>
+                  <Typography variant="h5">فرع طرطوس</Typography>
                   <Typography variant="caption">
                     سوريا,طرطوس,شارع المينا
                   </Typography>
@@ -1198,7 +1186,7 @@ export default function Branches() {
             <Stack rowGap={2}>
               <Stack spacing={2}>
                 <Stack spacing={1}>
-                  <Typography variant="h4">فرع بانياس</Typography>
+                  <Typography variant="h5">فرع بانياس</Typography>
                   <Typography variant="caption">
                     سوريا,بانياس,شارع جول جمال
                   </Typography>

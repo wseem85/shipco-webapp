@@ -1,6 +1,6 @@
 import { Box, Grow, Stack, Typography } from "@mui/material";
 import PropTypes from "prop-types";
-import lowqualitybackground from "/lowqualitybackground.jpg";
+import lowqualitybackground from "/lowqualitybackground.webp";
 import { useCallback, useEffect, useState } from "react";
 import { useTheme } from "@emotion/react";
 import { useDark } from "../contexts/modeContext";
@@ -86,7 +86,9 @@ export default function Landing({ src }) {
             xs: 380,
             sm: 300,
           },
-          backgroundColor: dark ? "#2b2b2b" : `rgba(63,125,136,0.8)`,
+          backgroundColor: dark
+            ? "rgba(255, 255, 255,0.2)"
+            : `rgba(63,125,136,0.4)`,
         }}
       >
         <Stack spacing={2} paddingTop={4} paddingBottom={4}>

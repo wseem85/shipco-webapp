@@ -15,22 +15,23 @@ import {
 } from "@mui/material";
 import PropTypes from "prop-types";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useTheme } from "@emotion/react";
 import LightModeIcon from "@mui/icons-material/LightMode";
 const drawerWidth = 240;
 const navItems = [
   { key: 1, path: "/", text: "الرئسية" },
-  { key: 2, path: "services", text: "الخدمات" },
-  { key: 3, path: "branches", text: "الفروع" },
-  { key: 4, path: "fees", text: "التعرفة" },
-  { key: 5, path: "contacts", text: "اتصل بنا" },
+  { key: 2, path: "/services", text: "الخدمات" },
+  { key: 3, path: "/branches", text: "الفروع" },
+  { key: 4, path: "/fees", text: "التعرفة" },
+  { key: 5, path: "/contacts", text: "اتصل بنا" },
 ];
 import ModeNightIcon from "@mui/icons-material/ModeNight";
 import { useDark } from "../contexts/modeContext";
 export default function Header(props) {
   const theme = useTheme();
+  const location = useLocation();
   const { dark, setDark } = useDark();
   const { window } = props;
 
@@ -44,7 +45,10 @@ export default function Header(props) {
     setActivePath(path);
   };
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center", overflow: "auto" }}
+    >
       <Box
         component="img"
         src="shipco-logo.png"
@@ -154,11 +158,15 @@ export default function Header(props) {
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}
+          hideBackdrop={mobileOpen ? false : true}
           sx={{
-            display: { xs: "block", sm: "none" },
+            display: { xs: mobileOpen ? "flex" : "none", sm: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
+            },
+            "& .MuiDrawer-modal": {
+              display: mobileOpen ? "flex" : "none",
             },
           }}
         >
@@ -170,5 +178,5 @@ export default function Header(props) {
 }
 
 Header.propTypes = {
-  window: PropTypes.object,
+  window: PropTypes.func,
 };
