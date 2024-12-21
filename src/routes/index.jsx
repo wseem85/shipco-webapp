@@ -21,7 +21,7 @@ import { BarChart } from "@mui/x-charts/BarChart";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { LineChart } from "@mui/x-charts";
 import { useEffect } from "react";
-import background from "/background.jpg";
+import background from "/background.webp";
 import Advantage from "../ui/advantage";
 function percentage(income, transfer) {
   return Math.floor((transfer / income) * 100);
